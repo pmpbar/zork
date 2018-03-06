@@ -4,7 +4,7 @@ import "globals/styles/navbar.css";
 
 export default class Navbar extends Component {
   render() {
-    return (<nav className="navbar navbar-expand-lg navbar-zork">
+    return (<nav className="navbar navbar-expand-lg fixed-top navbar-zork">
       <Link className="navbar-brand" to="/">
         dungeon
       </Link>
