@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoremIpsum from 'main/components/lorem-ipsum'
-import Title from 'main/components/title'
+import RandomTitle from 'main/components/random-title'
 import config from 'config.json';
 import 'main/styles/app.css';
 
@@ -54,7 +54,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <div className="main-text">
-          <Title />
+          <RandomTitle />
           <LoremIpsum paragraphs={1} />
           {outputs.map((o,i) => <p key={i}>({submitted[i]}) {o}</p>)}
           <LoremIpsum paragraphs={5} />

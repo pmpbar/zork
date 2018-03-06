@@ -23,11 +23,11 @@ const generate = {
     return _.random(10, 50);
   },
 
-  token: (f) => {
-    if(f === 'num') return generate.number();
-    else if(_.has(TitleData, f)) return _.sample(TitleData[f]);
-    else if(_.isArray(f)) return _.sample(f);
-    else return f;
+  token: (formula) => {
+    if(formula === 'num') return generate.number();
+    else if(_.has(TitleData, formula)) return _.sample(TitleData[formula]);
+    else if(_.isArray(formula)) return _.sample(formula);
+    else return formula;
   },
 
   title:  () => {
@@ -40,18 +40,15 @@ const generate = {
       var tries = generate.MAX_TRIES;
       while(_.contains(seen, token) && tries > 0) {
         token = generate.token(f);
-        tries--;
+        tries -= 1;
       }
       title.push(token);
       seen.push(token);
     }
-
-    title = title.join(' ');
-    return title;
+    return title.join(' ');
   },
 };
 
 export default (props) => {
-  const title = generate.title();
-  return (<h1>{title}</h1>);
+  return (<h1>{generate.title()}</h1>);
 }
