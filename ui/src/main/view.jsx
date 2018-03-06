@@ -24,8 +24,9 @@ export default class App extends Component {
           const outputs = [...this.state.outputs, json.output.replace('>', '')];
           this.setState({outputs});
         }
-      })
+      });
   }
+
   submit = (e) => {
     const { submission } = this.state;
     e.preventDefault();
@@ -43,8 +44,9 @@ export default class App extends Component {
           const submitted = [...this.state.submitted, submission];
           this.setState({submission: '', submitted});
         }
-      })
+      });
   }
+
   render() {
     const { outputs, submission, submitted } = this.state;
     /* const { loggedIn } = this.props;
