@@ -1,3 +1,22 @@
-.app {
-  text-align: center;
+$app-side-padding: 20vw;
+
+.main-text {
+  h1 {
+    text-align: center;
+  }
+  padding-top: 30px;
+  padding-left: $app-side-padding;
+  padding-right: $app-side-padding;
+}
+
+.lorem-ipsum {
+  color: rgba(0,0,0, 0.6);
+}
+
+.submission-form {
+  padding-top: 15px;
+  background: white;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
 }

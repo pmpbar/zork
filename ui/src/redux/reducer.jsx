@@ -1,17 +1,17 @@
-import { SET_THING } from 'redux/actions';
+import { SET_LOGIN } from 'redux/actions';
 /**
  * Base reducers
  */
 const defaultState = {
-  thing: 'asdf',
+  loggedIn: false,
 };
 
 const base = (state = defaultState, action) => {
   switch (action.type) {
-    case SET_THING:
+    case SET_LOGIN:
       return {
         ...state,
-        thing: action.thing,
+        loggedIn: action.loggedIn,
       };
     default:
       return state;

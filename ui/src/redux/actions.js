@@ -8,6 +8,6 @@ function makeActionCreator(type, ...argNames) {
   };
 }
 
-export const SET_THING = 'SET_THING';
+export const SET_LOGIN = 'SET_LOGIN';
 
-export const setThing = makeActionCreator(SET_THING, 'thing');
+export const setLogin = makeActionCreator(SET_LOGIN, 'loggedIn');

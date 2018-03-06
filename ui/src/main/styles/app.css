@@ -1,2 +1,16 @@
-.app {
-  text-align: center; }
+.main-text {
+  padding-top: 30px;
+  padding-left: 20vw;
+  padding-right: 20vw; }
+  .main-text h1 {
+    text-align: center; }
+
+.lorem-ipsum {
+  color: rgba(0, 0, 0, 0.6); }
+
+.submission-form {
+  padding-top: 15px;
+  background: white;
+  position: fixed;
+  bottom: 10px;
+  width: 100%; }
