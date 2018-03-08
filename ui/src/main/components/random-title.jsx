@@ -20,6 +20,7 @@ export default class RandomTitle extends Component {
       ['num', 'people', 'Who', 'peopleDesc']
     ];
   }
+
   componentDidMount() {
     if (this.state.title === '') {
       this.generate()
