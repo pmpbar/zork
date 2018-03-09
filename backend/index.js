@@ -23,13 +23,22 @@ app.use(expressWinston.logger({
   colorize: true,
 }));
 
+app.post('/login', (req, res) => {
+  log.info(JSON.stringify(req.body));
+  res.json({ status: 'OK', msg: 'Bad login' });
+});
+
 app.get('/output', (req, res) => {
   res.json({ status: 'OK', output: z.lastOutput() });
 });
 app.post('/submit', (req, res) => {
-  // const { submission } = req.body;
-  z.write(req.body.submission);
-  res.json({ status: 'OK' });
+  const { submission } = req.body;
+  if (submission) {
+    z.write(req.body.submission);
+    res.json({ status: 'OK' });
+  } else {
+    res.json({ status: 'err', msg: 'Not enough arguments' });
+  }
 });
 app.get('/', (req, res) => {
   res.json({ status: 'OK', data: 'hello world!' });
