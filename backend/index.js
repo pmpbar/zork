@@ -44,5 +44,5 @@ app.get('/', (req, res) => {
   res.json({ status: 'OK', data: 'hello world!' });
 });
 
-server.listen(config.express.port, () => log.info(`Server listening on ${config.express.port}`));
+server.listen(config.express.port, 'localhost', () => log.info(`Server listening on ${config.express.port}`));
 
