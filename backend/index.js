@@ -24,13 +24,19 @@ app.use(expressWinston.logger({
 }));
 
 app.post('/login', (req, res) => {
-  log.info(JSON.stringify(req.body));
-  res.json({ status: 'OK', msg: 'Bad login' });
+  const { username, password } = req.body;
+  const validLogins = {'asdf': 'asdf'}
+  if (validLogins[username] === password) {
+    res.json({ status: 'OK', msg: 'Good login' });
+  } else {
+    res.json({ status: 'OK', msg: 'Bad login' });
+  }
 });
 
 app.get('/output', (req, res) => {
   res.json({ status: 'OK', output: z.lastOutput() });
 });
+
 app.post('/submit', (req, res) => {
   const { submission } = req.body;
   if (submission) {
@@ -40,9 +46,11 @@ app.post('/submit', (req, res) => {
     res.json({ status: 'err', msg: 'Not enough arguments' });
   }
 });
+
 app.get('/', (req, res) => {
   res.json({ status: 'OK', data: 'hello world!' });
 });
 
-server.listen(config.express.port, 'localhost', () => log.info(`Server listening on ${config.express.port}`));
+server.listen(config.express.port, () => log.info(`Server listening on ${config.express.port}`));
+// server.listen(config.express.port, 'localhost', () => log.info(`Server listening on ${config.express.port}`));
 
