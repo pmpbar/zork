@@ -25,6 +25,7 @@ app.use(expressWinston.logger({
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
+  // stub for real login structure
   const validLogins = {'asdf': 'asdf'}
   if (validLogins[username] === password) {
     res.json({ status: 'OK', msg: 'Good login' });
