@@ -1,6 +1,7 @@
 {
   "loglevel": "error",
   "express": {
+    "local": false,
     "port": 1024
   }
 }

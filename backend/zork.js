@@ -1,15 +1,18 @@
 const fs = require('fs');
-const { spawn } = require('child_process');
+const { exec, spawn } = require('child_process');
 const log = require('./log');
 
 class Zork  {
-  constructor() {
-    this.zork = spawn('./zork');
-    this.zork.stdout.on('data', (data) => {
-      this.output = String(data);
+  constructor(user) {
+    exec(`./newgamecheck ${user}`, { cwd: `./games` }, (err, stdout, stderr) => {
+      // log.info(err, stdout, stderr);
+      this.zork = spawn(`./zork`, { cwd: `./games/${user}`});
+      this.zork.stdout.on('data', (data) => {
+        this.output = String(data);
+      });
     });
   };
-  async write(text) {
+  write(text) {
     this.zork.stdin.write(`${text}\n`);
     return this.output;
   }
