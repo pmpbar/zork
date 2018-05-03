@@ -1,0 +1,5 @@
+#!/bin/bash
+if [[ ! -d $1 ]]; then
+  cp -a ./blank $1
+  # echo "Created new game folder"
+fi
