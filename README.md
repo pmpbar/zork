@@ -1,2 +1,2 @@
 # Zork
-Play zork incognito https://pmpbar.com/zork
+Play zork incognito https://tay.bart.ski.com/zork
